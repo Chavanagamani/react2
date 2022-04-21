@@ -2,8 +2,8 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "storageAccounts_storagenagamani4_name": {
-            "defaultValue": "storagenagamani4",
+        "storageAccounts_storagenagamani6_name": {
+            "defaultValue": "storagenagamani6",
             "type": "String"
         }
     },
@@ -12,7 +12,7 @@
         {
             "type": "Microsoft.Storage/storageAccounts",
             "apiVersion": "2021-09-01",
-            "name": "[parameters('storageAccounts_storagenagamani4_name')]",
+            "name": "[parameters('storageAccounts_storagenagamani6_name')]",
             "location": "eastus",
             "sku": {
                 "name": "Standard_RAGRS",
@@ -53,9 +53,9 @@
         {
             "type": "Microsoft.Storage/storageAccounts/blobServices",
             "apiVersion": "2021-09-01",
-            "name": "[concat(parameters('storageAccounts_storagenagamani4_name'), '/default')]",
+            "name": "[concat(parameters('storageAccounts_storagenagamani6_name'), '/default')]",
             "dependsOn": [
-                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_storagenagamani4_name'))]"
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_storagenagamani6_name'))]"
             ],
             "sku": {
                 "name": "Standard_RAGRS",
@@ -86,9 +86,9 @@
         {
             "type": "Microsoft.Storage/storageAccounts/fileServices",
             "apiVersion": "2021-09-01",
-            "name": "[concat(parameters('storageAccounts_storagenagamani4_name'), '/default')]",
+            "name": "[concat(parameters('storageAccounts_storagenagamani6_name'), '/default')]",
             "dependsOn": [
-                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_storagenagamani4_name'))]"
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_storagenagamani6_name'))]"
             ],
             "sku": {
                 "name": "Standard_RAGRS",
@@ -110,9 +110,9 @@
         {
             "type": "Microsoft.Storage/storageAccounts/queueServices",
             "apiVersion": "2021-09-01",
-            "name": "[concat(parameters('storageAccounts_storagenagamani4_name'), '/default')]",
+            "name": "[concat(parameters('storageAccounts_storagenagamani6_name'), '/default')]",
             "dependsOn": [
-                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_storagenagamani4_name'))]"
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_storagenagamani6_name'))]"
             ],
             "properties": {
                 "cors": {
@@ -123,9 +123,9 @@
         {
             "type": "Microsoft.Storage/storageAccounts/tableServices",
             "apiVersion": "2021-09-01",
-            "name": "[concat(parameters('storageAccounts_storagenagamani4_name'), '/default')]",
+            "name": "[concat(parameters('storageAccounts_storagenagamani6_name'), '/default')]",
             "dependsOn": [
-                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_storagenagamani4_name'))]"
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_storagenagamani6_name'))]"
             ],
             "properties": {
                 "cors": {
@@ -136,10 +136,10 @@
         {
             "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
             "apiVersion": "2021-09-01",
-            "name": "[concat(parameters('storageAccounts_storagenagamani4_name'), '/default/', parameters('storageAccounts_storagenagamani4_name'), 'container')]",
+            "name": "[concat(parameters('storageAccounts_storagenagamani6_name'), '/default/', parameters('storageAccounts_storagenagamani6_name'), 'container')]",
             "dependsOn": [
-                "[resourceId('Microsoft.Storage/storageAccounts/blobServices', parameters('storageAccounts_storagenagamani4_name'), 'default')]",
-                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_storagenagamani4_name'))]"
+                "[resourceId('Microsoft.Storage/storageAccounts/blobServices', parameters('storageAccounts_storagenagamani6_name'), 'default')]",
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_storagenagamani6_name'))]"
             ],
             "properties": {
                 "immutableStorageWithVersioning": {
